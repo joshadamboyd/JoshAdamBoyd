@@ -1,45 +1,46 @@
 # JoshAdamBpyd
 
-Wordpress theme with Docker
+Wordpress theme. Using Docker
 
 ## Requirements
 
-- Docker
-- NPM
-- Yarn
+* Docker
+  * For Mac, download [Docker for Mac](https://www.docker.com/docker-mac)
+* Yarn
+  * For Mac, Install with [Homebrew](https://brew.sh/) with `brew install yarn`
 
 ## Setup
 
-```
-$ yarn
+```shell
+yarn
 ```
 
 ## Running
 
-Start Docker containers to test the theme
+Start the Docker container
 
-```
-$ docker-compose up --build
+```shell
+docker-compose up
 ```
 
 Stop and remove the Docker containers
 
-```
-$ docker-compose down
+```shell
+docker-compose down
 ```
 
 ## Assets
 
 Build assets and watch for changes to recompile
 
-```
-$ gulp
+```shell
+gulp
 ```
 
 Build assets but do not watch for changes
 
-```
-$ gulp build
+```shell
+gulp build
 ```
 
 ## Contributing
