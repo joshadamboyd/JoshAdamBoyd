@@ -1,4 +1,4 @@
-# JoshAdamBpyd
+# JoshAdamBoyd
 
 Wordpress theme. Using Docker
 
