@@ -1,5 +1,11 @@
+.git/
+RESOURCES/
 node_modules/
+tmp/
 .dockerignore
-.git
+.editorconfig
 .gitignore
+docker-compose.yml
 package.json
+README.md
+TODO.md

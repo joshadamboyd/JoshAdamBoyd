@@ -7,27 +7,33 @@ var del          = require('del'),
     plumber      = require('gulp-plumber'),
     sass         = require('gulp-sass'),
     sourcemaps   = require('gulp-sourcemaps'),
-    uglify       = require('gulp-uglify');
+    uglify       = require('gulp-uglify'),
+    zip          = require('gulp-zip');
 
 var src_paths = {
       scripts: [
-        'src/js/app.js'
+        './node_modules/jquery/dist/jquery.js',
+        './src/themes/joshadamboyd/js/skip-link-focus-fix.js',
+        './src/themes/joshadamboyd/js/global.js',
+        './node_modules/jquery.scrollTo/jquery.scrollTo.min.js',
+        './src/themes/joshadamboyd/js/script.js'
       ],
       styles: [
-        'src/css/app.scss'
+        './node_modules/normalize.css/normalize.css',
+        './src/themes/joshadamboyd/css/style/**/*.css'
       ]
     };
 
 var build_paths = {
-      scripts: 'dist/js',
-      styles:  'dist/css'
+      scripts: './wp-content/themes/joshadamboyd/assets/js',
+      styles:  './wp-content/themes/joshadamboyd/assets/css'
     },
     build_files = {
-      scripts: 'all.min.js',
-      styles: 'all.min.css'
+      scripts: 'script.js',
+      styles: 'style.css'
     };
 
-gulp.task('default', ['clean', 'scripts', 'styles', 'watch']);
+gulp.task('default', ['clean', 'scripts', 'styles', 'watcher']);
 
 gulp.task('build', ['clean', 'scripts', 'styles']);
 
@@ -36,6 +42,12 @@ gulp.task('clean', function() {
     build_paths.scripts + '/' + build_files.scripts,
     build_paths.styles + '/' + build_files.styles
   ]);
+});
+
+gulp.task('package', function () {
+    return gulp.src('./wp-content/themes/**/*')
+                .pipe(zip('joshadamboyd.zip'))
+                .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('scripts', function() {
@@ -68,7 +80,9 @@ gulp.task('styles', function() {
              .pipe(notify({ message: 'Styles task completed' }));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['clean', 'scripts', 'styles', 'watcher']);
+
+gulp.task('watcher', function() {
   gulp.watch(src_paths.scripts, ['scripts']);
   gulp.watch(src_paths.styles, ['styles']);
 });

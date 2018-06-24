@@ -10,22 +10,19 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     volumes:
-      - db_data:/var/lib/mysql
+      - ./tmp/mysql:/var/lib/mysql
 
   wordpress:
-    image: wordpress:4.9.4
+    image: wordpress:4.9.6
     restart: always
     depends_on:
       - db
     ports:
-      - "8000:80"
+      - "8080:80"
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_USER: wordpress
     volumes:
-      - .:/var/www/html/wp-content/themes/joshadamboyd/
-
-volumes:
-  db_data:
+      - ./wp-content/themes/joshadamboyd:/var/www/html/wp-content/themes/joshadamboyd

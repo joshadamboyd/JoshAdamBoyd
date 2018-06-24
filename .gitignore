@@ -1,3 +1,6 @@
 .DS_Store
 .Trashes
+dist/*.zip
 node_modules/
+RESOURCES/
+tmp/

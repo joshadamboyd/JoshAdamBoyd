@@ -12,7 +12,7 @@ Wordpress theme. Using Docker
 ## Setup
 
 ```shell
-yarn
+$ yarn
 ```
 
 ## Running
@@ -20,13 +20,13 @@ yarn
 Start the Docker container
 
 ```shell
-docker-compose up
+$ docker-compose up
 ```
 
 Stop and remove the Docker containers
 
 ```shell
-docker-compose down
+$ docker-compose down
 ```
 
 ## Assets
@@ -34,13 +34,19 @@ docker-compose down
 Build assets and watch for changes to recompile
 
 ```shell
-gulp
+$ gulp watch
 ```
 
 Build assets but do not watch for changes
 
 ```shell
-gulp build
+$ gulp build
+```
+
+## Package Theme
+
+```shell
+$ gulp zip
 ```
 
 ## Contributing
