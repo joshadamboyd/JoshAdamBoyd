@@ -1,7 +1,7 @@
             </div>
 
-            <footer id="colophon" class="site-footer" role="contentinfo">
-                <div class="wrap">
+            <footer id="colophon" class="footer bg-dark site-footer" role="contentinfo">
+                <div class="container">
                 <?php
                 get_template_part('template-parts/footer/footer', 'widgets');
 

@@ -13,6 +13,7 @@ var del          = require('del'),
 var src_paths = {
       scripts: [
         './node_modules/jquery/dist/jquery.js',
+        './node_modules/bootstrap/dist/js/bootstrap.js',
         './src/themes/joshadamboyd/js/skip-link-focus-fix.js',
         './src/themes/joshadamboyd/js/global.js',
         './node_modules/jquery.scrollTo/jquery.scrollTo.min.js',
@@ -20,6 +21,7 @@ var src_paths = {
       ],
       styles: [
         './node_modules/normalize.css/normalize.css',
+        './node_modules/bootstrap/dist/css/bootstrap.css',
         './src/themes/joshadamboyd/css/style/**/*.css'
       ]
     };
