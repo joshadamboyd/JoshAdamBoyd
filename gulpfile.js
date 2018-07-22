@@ -20,9 +20,7 @@ var src_paths = {
         './src/themes/joshadamboyd/js/script.js'
       ],
       styles: [
-        './node_modules/normalize.css/normalize.css',
-        './node_modules/bootstrap/dist/css/bootstrap.css',
-        './src/themes/joshadamboyd/css/style/**/*.css'
+        './src/themes/joshadamboyd/css/style.scss'
       ]
     };
 
