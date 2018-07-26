@@ -1,0 +1,17 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  .menu-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .sub-menu {
+    float: none;
+    position: static;
+  }
+}

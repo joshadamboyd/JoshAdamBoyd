@@ -1,66 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
 
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-    <div id="page" class="site">
-        <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'joshadamboyd'); ?></a>
+  <div id="page" class="site">
+    <?php if ((joshadamboyd_is_frontpage() || (is_home() && is_front_page()))) : ?>
+      <a href="#content" class="skip-link menu-scroll-down">
+        <span class="screen-reader-text"><?php _e('Scroll down to content', 'joshadamboyd'); ?></span>
+      </a>
+    <?php endif; ?>
 
-        <!--
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
+    <header class="header">
+      <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-light">
+        <div class="container">
+          <button class="navbar-toggler navbar-toggler-right" type="button"
+                  data-toggle="collapse" data-target="#navbarTop"
+                  aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                      <li class="nav-item active">
-                          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#">Features</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#">Pricing</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Dropdown link
-                          </a>
-
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                          </div>
-                      </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-      -->
-
-        <header id="masthead" class="site-header" role="banner">
-            <?php get_template_part('template-parts/header/header', 'image'); ?>
-
-            <?php if (has_nav_menu('top')) : ?>
-                <div class="navigation-top">
-                    <div class="wrap">
-                        <?php get_template_part('template-parts/navigation/navigation', 'top'); ?>
-                    </div>
-                </div>
+          <a class="navbar-brand" href="<?php bloginfo('url')?>">
+            <?php if (has_custom_logo()) : ?>
+                <?php the_custom_logo(); ?>
+            <?php else : ?>
+                <?php bloginfo('name')?>
             <?php endif; ?>
-        </header>
+          </a>
+
+          <div id="navbarTop" class="collapse navbar-collapse main-navigation"
+               role="navigation"
+               aria-label="<?php esc_attr_e('Top Menu', 'joshadamboyd'); ?>">
+            <?php if (has_nav_menu('top')) : ?>
+                <?php wp_nav_menu(array(
+                    'theme_location' => 'top',
+                    'menu_id'        => 'top-menu',
+                    'menu_class'     => 'menu mr-auto'
+                )); ?>
+            <?php else : ?>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="<?php echo esc_url(home_url('/')); ?>">Home</a>
+                </li>
+              </ul>
+            <?php endif; ?>
+          </div>
+
+          <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'joshadamboyd'); ?></a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="content" class="container">
+      <section class="hud">
+        <div class="jumbotron">
+          <div class="container">
+            <h1 class="display-3">Hello, world!</h1>
+
+            <p>
+              This is a template for a simple marketing or informational website. It includes a large callout called a
+              jumbotron and three supporting pieces of content. Use it as a starting point to create something more
+              unique.
+            </p>
+
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+          </div>
+        </div>
+
+        <?php // get_template_part('template-parts/header/header', 'image'); ?>
 
         <?php
         if ((is_single() || (is_page() && ! joshadamboyd_is_frontpage())) && has_post_thumbnail(get_queried_object_id())) :
@@ -69,6 +82,4 @@
             echo '</div>';
         endif;
         ?>
-
-        <div class="site-content-contain">
-            <div id="content" class="site-content">
+      </section>

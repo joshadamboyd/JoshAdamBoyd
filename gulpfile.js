@@ -11,27 +11,28 @@ var del          = require('del'),
     zip          = require('gulp-zip');
 
 var src_paths = {
-      scripts: [
-        './node_modules/jquery/dist/jquery.js',
-        './node_modules/bootstrap/dist/js/bootstrap.js',
-        './src/themes/joshadamboyd/js/skip-link-focus-fix.js',
-        './src/themes/joshadamboyd/js/global.js',
-        './node_modules/jquery.scrollTo/jquery.scrollTo.min.js',
-        './src/themes/joshadamboyd/js/script.js'
-      ],
-      styles: [
-        './src/themes/joshadamboyd/css/style.scss'
-      ]
-    };
+                  scripts: [
+                    './node_modules/jquery/dist/jquery.slim.js',
+                    './node_modules/tether/dist/js/tether.js',
+                    './node_modules/bootstrap/dist/js/bootstrap.js',
+                    './src/themes/joshadamboyd/js/skip-link-focus-fix.js',
+                    './node_modules/jquery.scrollTo/jquery.scrollTo.js',
+                    './src/themes/joshadamboyd/js/global.js',
+                    './src/themes/joshadamboyd/js/scripts.js'
+                  ],
+                  styles: [
+                    './src/themes/joshadamboyd/css/style.scss'
+                  ]
+                };
 
 var build_paths = {
-      scripts: './wp-content/themes/joshadamboyd/assets/js',
-      styles:  './wp-content/themes/joshadamboyd/assets/css'
-    },
-    build_files = {
-      scripts: 'script.js',
-      styles: 'style.css'
-    };
+                    scripts: './wp-content/themes/joshadamboyd/assets/js',
+                    styles: './wp-content/themes/joshadamboyd/assets/css'
+                  },
+                  build_files = {
+                    scripts: 'script.js',
+                    styles: 'style.css'
+                  };
 
 gulp.task('default', ['clean', 'scripts', 'styles', 'watcher']);
 
@@ -45,9 +46,9 @@ gulp.task('clean', function() {
 });
 
 gulp.task('package', function () {
-    return gulp.src('./wp-content/themes/**/*')
-                .pipe(zip('joshadamboyd.zip'))
-                .pipe(gulp.dest('./dist'));
+  return gulp.src('./wp-content/themes/**/*')
+             .pipe(zip('joshadamboyd.zip'))
+             .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('scripts', function() {

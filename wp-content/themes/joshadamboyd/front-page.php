@@ -1,7 +1,10 @@
 <?php get_header(); ?>
 
-<div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+<main id="primary" class="main primary container front-page"
+      role="main"
+      aria-label="<?php esc_attr_e('Main', 'joshadamboyd'); ?>">
+  <div class="row">
+    <div class="col-lg">
         <?php
         if (have_posts()) :
             while (have_posts()) :
@@ -22,7 +25,8 @@
                 joshadamboyd_front_page_section(null, $i);
             }
         endif; ?>
-    </main>
-</div>
+    </div>
+  </div>
+</main>
 
-<?php get_footer();
+<?php get_footer(); ?>

@@ -1,8 +1,11 @@
 @import 'common/variables';
 
 // Vendor
-@import '../../../../node_modules/normalize.css/normalize.css';
-@import '../../../../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '../../../../node_modules/normalize-scss/sass/normalize';
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
+
+// Wordpress and Bootstrap
+@import 'common/wordpress';
 
 // Core
 @import 'design/accessibility';
@@ -29,9 +32,13 @@
 @import 'design/featured_image_hover';
 @import 'design/comments';
 @import 'design/widgets';
+@import 'design/media';
 @import 'design/media/galleries';
 
 // Helpers
 @import 'design/customizer';
 @import 'design/print';
 @import 'design/media_queries';
+
+// Misc
+@import 'common/shame';
