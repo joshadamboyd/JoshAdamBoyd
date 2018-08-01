@@ -34,6 +34,11 @@ var build_paths = {
                     styles: 'style.css'
                   };
 
+var watch_paths = {
+                    scripts: './src/themes/joshadamboyd/js/**/*.js',
+                    styles: './src/themes/joshadamboyd/css/**/*.scss'
+                  };
+
 gulp.task('default', ['clean', 'scripts', 'styles', 'watcher']);
 
 gulp.task('build', ['clean', 'scripts', 'styles']);
@@ -84,6 +89,6 @@ gulp.task('styles', function() {
 gulp.task('watch', ['clean', 'scripts', 'styles', 'watcher']);
 
 gulp.task('watcher', function() {
-  gulp.watch(src_paths.scripts, ['scripts']);
-  gulp.watch(src_paths.styles, ['styles']);
+  gulp.watch(watch_paths.scripts, ['scripts']);
+  gulp.watch(watch_paths.styles, ['styles']);
 });
