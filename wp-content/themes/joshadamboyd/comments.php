@@ -34,7 +34,7 @@ if (post_password_required()) {
                 'avatar_size' => 100,
                 'style'       => 'ol',
                 'short_ping'  => true,
-                'reply_text'  => joshadamboyd_get_svg(array('icon' => 'mail-reply')) . __('Reply', 'joshadamboyd')
+                'reply_text'  => __('Reply', 'joshadamboyd')
             ));
             ?>
         </ol>

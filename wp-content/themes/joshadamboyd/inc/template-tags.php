@@ -79,11 +79,11 @@ if (!function_exists('joshadamboyd_entry_footer')) :
 
                     // Make sure there's more than one category before displaying.
                     if ($categories_list && joshadamboyd_categorized_blog()) {
-                        echo '<span class="cat-links">' . joshadamboyd_get_svg(array('icon' => 'folder-open')) . '<span class="screen-reader-text">' . __('Categories', 'joshadamboyd') . '</span>' . $categories_list . '</span>';
+                        echo '<span class="cat-links">' . '<span class="screen-reader-text">' . __('Categories', 'joshadamboyd') . '</span>' . $categories_list . '</span>';
                     }
 
                     if ($tags_list && ! is_wp_error($tags_list)) {
-                        echo '<span class="tags-links">' . joshadamboyd_get_svg(array('icon' => 'hashtag')) . '<span class="screen-reader-text">' . __('Tags', 'joshadamboyd') . '</span>' . $tags_list . '</span>';
+                        echo '<span class="tags-links">' . '<span class="screen-reader-text">' . __('Tags', 'joshadamboyd') . '</span>' . $tags_list . '</span>';
                     }
 
                     echo '</span>';
@@ -92,7 +92,7 @@ if (!function_exists('joshadamboyd_entry_footer')) :
 
             joshadamboyd_edit_link();
 
-            echo '</footer> <!-- .entry-footer -->';
+            echo '</footer>';
         }
     }
 endif;

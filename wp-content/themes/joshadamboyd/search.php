@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php get_sidebar(); ?>
-
 <main id="primary" class="main primary container search"
       role="main"
       aria-label="<?php esc_attr_e('Main', 'joshadamboyd'); ?>">
@@ -14,6 +12,19 @@
         <?php endif; ?>
     </h1>
   </header>
+
+  <ul class="cats">
+    <?php  wp_list_categories(array(
+      'depth'               => 1,
+      'echo'                => true,
+      'hide_empty'          => true,
+      'hide_title_if_empty' => true,
+      'show_count'          => false,
+      'show_option_all'     => __('All'),
+      'title_li'            => '',
+      'use_desc_for_title'  => true
+    )); ?>
+  </ul>
 
   <div class="row">
     <div class="col-lg">

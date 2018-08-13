@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php get_sidebar(); ?>
-
 <main id="primary" class="main primary container"
       role="main"
       aria-label="<?php esc_attr_e('Main', 'joshadamboyd'); ?>">

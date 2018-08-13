@@ -9,7 +9,7 @@
          placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder', 'joshadamboyd'); ?>"
          value="<?php echo get_search_query(); ?>" />
 
-  <button type="submit" class="search-submit"><?php echo joshadamboyd_get_svg(array('icon' => 'search')); ?>
-    <span class="screen-reader-text"><?php echo _x('Search', 'submit button', 'joshadamboyd'); ?></span>
+  <button type="submit" class="search-submit">
+    <?php echo _x('Search', 'submit button', 'joshadamboyd'); ?>
   </button>
 </form>

@@ -16,7 +16,8 @@ if (version_compare($GLOBALS['wp_version'], '4.7-alpha', '<')) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function joshadamboyd_setup() {
+function joshadamboyd_setup()
+{
     /*
      * Make theme available for translation.
      * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/joshadamboyd
@@ -387,8 +388,8 @@ function joshadamboyd_colors_css_wrap()
     ?>
     <style type="text/css" id="custom-theme-colors" <?php if (is_customize_preview()) {
                                                               echo 'data-hue="' . $hue . '"';
-    }
-    ?>>
+}
+?>>
         <?php echo joshadamboyd_custom_colors_css(); ?>
     </style>
 <?php }

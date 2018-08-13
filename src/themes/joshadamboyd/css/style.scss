@@ -1,4 +1,8 @@
+// Variables
 @import 'common/variables';
+
+// Fonts
+@import 'common/fonts';
 
 // Vendor
 @import '../../../../node_modules/normalize-scss/sass/normalize';
@@ -8,12 +12,10 @@
 @import 'common/wordpress';
 
 // Core
-@import 'design/accessibility';
 @import 'design/svg_fallbacks';
 @import 'design/clearings';
-@import 'design/formatting';
 @import 'design/typography';
-@import 'design/alignments';
+@import 'design/alignment';
 
 // Elements
 @import 'design/layout';
@@ -23,7 +25,6 @@
 @import 'design/layout/posts';
 @import 'design/layout/regular_content';
 @import 'design/layout/pages';
-@import 'design/tables';
 @import 'design/lists';
 @import 'design/forms';
 @import 'design/navigation';
