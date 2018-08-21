@@ -1,24 +1,49 @@
 // Colors
 //
-$blue:   #007fac !default;
-// $indigo: #6610f2 !default;
-// $purple: #6f42c1 !default;
-// $pink:   #e83e8c !default;
-$red:    #ff565c !default;
-// $orange: #fd7e14 !default;
-// $yellow: #ffc107 !default;
-// $green:  #28a745 !default;
-// $teal:   #20c997 !default;
-// $cyan:   #17a2b8 !default;
+$black:  #4a4a4a !default;
+$white:  #f8f8f8 !default;
 
-$background-light: #f8f8f8 !default;
+$blue:   #007fac !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink:   #e83e8c !default;
+$red:    #ff565c !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green:  #28a745 !default;
+$teal:   #20c997 !default;
+$cyan:   #17a2b8 !default;
+
+// Colors
+//
+$gray-base:              $black !default;
+$gray-darker:            lighten($gray-base, 12.5%) !default;
+$gray-dark:              lighten($gray-base, 19%) !default;
+$gray:                   lighten($gray-base, 32.5%) !default;
+$gray-light:             lighten($gray-base, 45.7%) !default;
+$gray-lighter:           lighten($gray-base, 55.5%) !default;
+
+$brand-primary:         $red !default;
+$brand-success:         $green !default;
+$brand-info:            lighten(#428bca, 6.5%) !default;
+$brand-warning:         $orange !default;
+$brand-danger:          $red !default;
+
+//= Scaffolding
+//
+//## Settings for some of the most global styles.
+
+
+
 
 // Body
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $background-light !default;
+$body-bg:                   $white !default;
 // $body-color:                $gray-900 !default;
+
+$text-color: $gray-dark !default;
 
 // Links
 //

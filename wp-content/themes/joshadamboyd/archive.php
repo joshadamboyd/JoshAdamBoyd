@@ -37,9 +37,7 @@
             endwhile;
 
             the_posts_pagination(array(
-              'prev_text' => joshadamboyd_get_svg(array('icon' => 'arrow-left')) . '<span class="screen-reader-text">' . __('Previous page', 'joshadamboyd') . '</span>',
-              'next_text' => '<span class="screen-reader-text">' . __('Next page', 'joshadamboyd') . '</span>' . joshadamboyd_get_svg(array('icon' => 'arrow-right')),
-              'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'joshadamboyd') . ' </span>'
+              'mid_size' => 4
             ));
         else :
             get_template_part('template-parts/post/content', 'none');

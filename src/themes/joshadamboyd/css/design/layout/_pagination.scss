@@ -1,0 +1,50 @@
+.pagination {
+  display: block;
+  margin: 96px 0;
+
+  .screen-reader-text {
+    display: none;
+  }
+
+  .nav-links {
+    text-align: center;
+  }
+}
+
+.page-numbers {
+  color: $black;
+  padding: .4em .85em;
+  text-decoration: none;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+
+  &.current {
+    @include border-radius($card-border-radius);
+    background-color: $red;
+    color: $white;
+  }
+}
+
+.next,
+.prev {
+  &.page-numbers {
+    &:focus,
+    &:hover {
+      @include border-radius($card-border-radius);
+      background-color: $red;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+.next {
+  &.page-numbers { }
+}
+
+.prev {
+  &.page-numbers { }
+}
