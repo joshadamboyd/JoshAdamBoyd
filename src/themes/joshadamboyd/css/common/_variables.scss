@@ -27,7 +27,7 @@ $brand-primary:         $red !default;
 $brand-success:         $green !default;
 $brand-info:            lighten(#428bca, 6.5%) !default;
 $brand-warning:         $orange !default;
-$brand-danger:          $red !default;
+$brand-danger:          lighten($red, 4.5%) !default;
 
 // Body
 //
