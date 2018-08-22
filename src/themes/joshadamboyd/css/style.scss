@@ -1,11 +1,13 @@
-// Variables
-@import 'common/variables';
-
 // Fonts
 @import 'common/fonts';
 
-// Vendor
+// Reset
 @import '../../../../node_modules/normalize-scss/sass/normalize';
+
+// Bootstrap variables
+@import 'common/variables';
+
+// Bootstrap
 @import '../../../../node_modules/bootstrap/scss/bootstrap';
 
 // Wordpress and Bootstrap
