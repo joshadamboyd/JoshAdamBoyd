@@ -14,9 +14,7 @@
   <ul class="cats">
     <?php  wp_list_categories(array(
       'depth'               => 1,
-      'echo'                => true,
-      'hide_empty'          => true,
-      'hide_title_if_empty' => true,
+      'hide_title_if_empty' => 1,
       'show_count'          => false,
       'show_option_all'     => __('All'),
       'title_li'            => '',

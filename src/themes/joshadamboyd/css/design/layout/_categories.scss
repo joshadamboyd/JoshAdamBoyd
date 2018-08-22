@@ -1,29 +1,33 @@
-// <ul class="cats">
-//   <?php  wp_list_categories(array(
-//     'depth'               => 1,
-//     'echo'                => true,
-//     'hide_empty'          => true,
-//     'hide_title_if_empty' => true,
-//     'show_count'          => false,
-//     'show_option_all'     => __('All'),
-//     'title_li'            => '',
-//     'use_desc_for_title'  => true
-//   )); ?>
-// </ul>
-
 .cats {
-  .cat-item-all {
-    a {
+  font-size: 18px;
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+  text-transform: uppercase;
 
+  .cat-item-all,
+  .cat-item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: .5rem;
+    }
+
+    a {
+      color: $gray-dark;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        border-bottom: 2px solid $red;
+        color: $red;
+      }
+    }
+  }
+
+  .current-cat {
+    a {
+      color: $red;
     }
   }
 }
-
-// <ul class="cats">
-//   <li class="cat-item-all">
-//     <a href="http://localhost:8080/">All</a></li>	<li class="cat-item cat-item-2"><a href="http://localhost:8080/category/testing/">Testing</a>
-//   </li>
-//   <li class="cat-item cat-item-1">
-//     <a href="http://localhost:8080/category/uncategorized/">Uncategorized</a>
-//   </li>
-// </ul>
