@@ -31,7 +31,11 @@
                 get_template_part('template-parts/post/content', get_post_format());
             endwhile;
 
-            the_posts_pagination( array( 'mid_size' => 4 ) );
+            the_posts_pagination(array(
+              'prev_text' => joshadamboyd_fontawesome(array('icon' => 'angle-left')) . '<span class="screen-reader-text">' . __('Previous page', 'joshadamboyd') . '</span>',
+              'next_text' => '<span class="screen-reader-text">' . __('Next page', 'joshadamboyd') . '</span>' . joshadamboyd_fontawesome(array('icon' => 'angle-right')),
+              'mid_size' => 4
+            ));
         else :
             get_template_part('template-parts/post/content', 'none');
         endif;

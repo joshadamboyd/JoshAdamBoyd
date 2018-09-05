@@ -113,84 +113,36 @@ function joshadamboyd_get_svg($args = array())
 }
 
 /**
- * Display SVG icons in social links menu.
+ * Return Font Awesome markup.
  *
- * @param  string  $item_output The menu item output.
- * @param  WP_Post $item        Menu item object.
- * @param  int     $depth       Depth of the menu.
- * @param  array   $args        wp_nav_menu() arguments.
- * @return string  $item_output The menu item output with social icon.
- */
-function joshadamboyd_nav_menu_social_icons($item_output, $item, $depth, $args)
-{
-    // Get supported social icons.
-    $social_icons = joshadamboyd_social_links_icons();
-
-    // Change SVG icon inside social links menu if there is supported URL.
-    if ('social' === $args->theme_location) {
-        foreach ($social_icons as $attr => $value) {
-            if (false !== strpos($item_output, $attr)) {
-                $item_output = str_replace($args->link_after, '</span>' . joshadamboyd_get_svg(array('icon' => esc_attr($value))), $item_output);
-            }
-        }
-    }
-
-    return $item_output;
-}
-add_filter('walker_nav_menu_start_el', 'joshadamboyd_nav_menu_social_icons', 10, 4);
-
-/**
- * Returns an array of supported social links (URL and icon name).
+ * @param array $args {
+ *     Parameters needed to display a Font Awesome icon.
  *
- * @return array $social_links_icons
+ *     @type string $icon  Required icon name. Assuming fas
+ *     @type string $text Optional icon text.
+ * }
+ * @return string markup.
  */
-function joshadamboyd_social_links_icons()
+function joshadamboyd_fontawesome($args = array())
 {
-    // Supported social links icons.
-    $social_links_icons = array(
-        'behance.net'     => 'behance',
-        'codepen.io'      => 'codepen',
-        'deviantart.com'  => 'deviantart',
-        'digg.com'        => 'digg',
-        'docker.com'      => 'dockerhub',
-        'dribbble.com'    => 'dribbble',
-        'dropbox.com'     => 'dropbox',
-        'facebook.com'    => 'facebook',
-        'flickr.com'      => 'flickr',
-        'foursquare.com'  => 'foursquare',
-        'plus.google.com' => 'google-plus',
-        'github.com'      => 'github',
-        'instagram.com'   => 'instagram',
-        'linkedin.com'    => 'linkedin',
-        'mailto:'         => 'envelope-o',
-        'medium.com'      => 'medium',
-        'pinterest.com'   => 'pinterest-p',
-        'pscp.tv'         => 'periscope',
-        'getpocket.com'   => 'get-pocket',
-        'reddit.com'      => 'reddit-alien',
-        'skype.com'       => 'skype',
-        'skype:'          => 'skype',
-        'slideshare.net'  => 'slideshare',
-        'snapchat.com'    => 'snapchat-ghost',
-        'soundcloud.com'  => 'soundcloud',
-        'spotify.com'     => 'spotify',
-        'stumbleupon.com' => 'stumbleupon',
-        'tumblr.com'      => 'tumblr',
-        'twitch.tv'       => 'twitch',
-        'twitter.com'     => 'twitter',
-        'vimeo.com'       => 'vimeo',
-        'vine.co'         => 'vine',
-        'vk.com'          => 'vk',
-        'wordpress.org'   => 'wordpress',
-        'wordpress.com'   => 'wordpress',
-        'yelp.com'        => 'yelp',
-        'youtube.com'     => 'youtube',
-    );
+  if (empty($args)) {
+      return __('Please define default parameters in the form of an array.', 'joshadamboyd');
+  }
 
-    /**
-     * Filter social links icons.
-     *
-     * @param array $social_links_icons Array of social links icons.
-     */
-    return apply_filters('joshadamboyd_social_links_icons', $social_links_icons);
+  if (false === array_key_exists('icon', $args)) {
+      return __('Please define an icon.', 'joshadamboyd');
+  }
+
+  $defaults = array(
+      'icon' => 'flag',
+      'text' => '',
+  );
+
+  $args = wp_parse_args($args, $defaults);
+
+  $svg = '<i class="fas fa-' . esc_attr($args['icon']) . '" aria-hidden="true">';
+  $svg .= esc_attr($args['text']);
+  $svg .= '</i>';
+
+  return $svg;
 }
