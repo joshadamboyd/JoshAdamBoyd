@@ -10,12 +10,7 @@
             <div class="entry-meta">
                 <?php
                     echo joshadamboyd_time_link();
-                    joshadamboyd_edit_link();
                 ?>
-            </div>
-        <?php elseif ('page' === get_post_type() && get_edit_post_link()) : ?>
-            <div class="entry-meta">
-                <?php joshadamboyd_edit_link(); ?>
             </div>
         <?php endif; ?>
 

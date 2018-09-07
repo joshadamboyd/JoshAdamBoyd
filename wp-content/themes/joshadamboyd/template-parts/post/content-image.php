@@ -18,7 +18,6 @@
                 joshadamboyd_posted_on();
             } else {
                 echo joshadamboyd_time_link();
-                joshadamboyd_edit_link();
             };
             echo '</div><!-- .entry-meta -->';
         };
