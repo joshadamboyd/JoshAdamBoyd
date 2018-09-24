@@ -9,16 +9,16 @@
         while (have_posts()) :
             the_post();
 
+            the_post_navigation(array(
+              'prev_text' => joshadamboyd_fontawesome(array('icon' => 'angle-left')) . '<span class="screen-reader-text">' . __('Previous Page', 'joshadamboyd') . '</span>',
+              'next_text' => '<span class="screen-reader-text">' . __('Next Page', 'joshadamboyd') . '</span>' . joshadamboyd_fontawesome(array('icon' => 'angle-right'))
+            ));
+
             get_template_part('template-parts/post/content', get_post_format());
 
             if (comments_open() || get_comments_number()) :
                 comments_template();
             endif;
-
-            the_post_navigation(array(
-              'prev_text' => '<span class="screen-reader-text">' . __('Previous Post', 'joshadamboyd') . '</span><span aria-hidden="true" class="nav-subtitle">' . __('Previous', 'joshadamboyd') . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . joshadamboyd_get_svg(array('icon' => 'arrow-left')) . '</span>%title</span>',
-              'next_text' => '<span class="screen-reader-text">' . __('Next Post', 'joshadamboyd') . '</span><span aria-hidden="true" class="nav-subtitle">' . __('Next', 'joshadamboyd') . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . joshadamboyd_get_svg(array('icon' => 'arrow-right')) . '</span></span>'
-            ));
         endwhile;
         ?>
     </div>
