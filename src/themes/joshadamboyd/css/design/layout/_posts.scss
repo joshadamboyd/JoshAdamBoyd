@@ -2,6 +2,19 @@
  Posts
 --------------------------------------------------------------*/
 
+body {
+  &.archive,
+  &.blog,
+  &.category,
+  &.search-results {
+    .page,
+    .post {
+      @include border-radius($card-border-radius);
+      background-color: $pure;
+      box-shadow: 0 2px 4px 0 rgba($black, .25);
+    }
+  }
+}
 // /* Post Landing Page */
 //
 // .sticky {
